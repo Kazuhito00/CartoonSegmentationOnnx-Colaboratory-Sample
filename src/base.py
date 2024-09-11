@@ -1,6 +1,7 @@
 import onnxruntime as ort
 import numpy as np
 from . import utils
+from typing import List
 
 
 class BaseModel:

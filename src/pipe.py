@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from .base import BaseModel
 from .refiner import RefinerModel
 from IPython.display import Image
+from typing import List
 
 
 @dataclass

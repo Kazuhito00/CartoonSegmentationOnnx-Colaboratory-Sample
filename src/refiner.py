@@ -3,6 +3,7 @@ import numpy as np
 import cv2
 from dataclasses import dataclass
 from . import utils
+from typing import List
 
 
 @dataclass
