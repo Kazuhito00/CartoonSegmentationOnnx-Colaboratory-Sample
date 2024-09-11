@@ -54,11 +54,12 @@ class Pipe:
         self,
         base_model_path: str,
         refiner_mode_path: str = None,
+        providers: List[str] = ['CUDAExecutionProvider', 'CPUExecutionProvider'],
     ):
-        self.base_model = BaseModel(base_model_path)
+        self.base_model = BaseModel(base_model_path, providers)
         self.refiner_model = None
         if refiner_mode_path:
-            self.refiner_model = RefinerModel(refiner_mode_path)
+            self.refiner_model = RefinerModel(refiner_mode_path, providers)
 
     def infer(
         self,

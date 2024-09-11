@@ -7,8 +7,9 @@ class BaseModel:
     def __init__(
         self,
         model_path: str = "models/base.onnx",
+        providers: List[str] = ['CUDAExecutionProvider', 'CPUExecutionProvider'],
     ):
-        self.session = ort.InferenceSession(model_path)
+        self.session = ort.InferenceSession(model_path, providers=providers)
         self.input_name = "input"
         self.output_name = ["dets", "masks"]
 
